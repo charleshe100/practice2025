@@ -1,2 +1,2 @@
 # practice2025
-練習
+* day001: Swap the values of two variables
