@@ -3,37 +3,42 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>practice002</title>
+    <title>practice003</title>
     <link rel="stylesheet" href="./css/bootstrap.min.css">
 </head>
 <body>
 <div class="container mx-auto mt-3 text-center">
-    <h1>判斷成績及格學生</h1>
-    <h3>
-    <!-- 給定一個成績數字，判斷是否及格(60)分 -->
-    <?php
-    $score=60;
-    if ($score>=60) {
-        echo "學生的成績為：".$score."分，及格";
-    }else{
-        echo "學生的成績為：".$score."分，不及格";
-    }
-    ?>
-    <h1 class="mt-5">分配成績等級與評語</h1>
+    <h1>使用for迴圈來產生以下的數列</h1>
+    <!-- 1,3,5,7,9……n -->
+    <!-- 10,20,30,40,50,60……n -->
+    <!-- 3,5,7,11,13,17……97 -->
     <h3>
     <?php
-    if(0 <= $score && $score <= 59){
-        echo "學生成績等級為：E，急需改進";
-    }else if(60 <= $score && $score <= 69){
-        echo "學生成績等級為：D，有待加強";
-    }else if(70 <= $score && $score <= 79){
-        echo "學生成績等級為：C，表現尚可";
-    }else if(80 <= $score && $score <= 89){
-        echo "學生成績等級為：B，表現優良";
-    }else if(90 <= $score && $score <= 100){
-        echo "學生成績等級為：A，卓越非凡";
+    for ($i=1; $i < 100 ; $i+=2) { 
+      echo "$i, ";  
+    }
+    echo "<br><br><br>";
+    for ($i=10; $i < 100 ; $i+=10) { 
+        echo "$i, ";  
+    }
+    echo "<br><br><br>";    
+    echo "2, "; 
+    for ($i = 3; $i <= 1000; $i += 2) { 
+        $isPrimeNum = true; 
+
+        for ($j = 2; $j <= sqrt($i); $j++) { // 從2到 i 的平方根檢查
+            if ($i % $j == 0) {
+                $isPrimeNum = false; // 如果能被整除，就不是質數
+                break;
+            }
+        }
+
+        if ($isPrimeNum) {
+            echo "$i, ";
+        }
     }
     ?>
+
     </h3>
 </div>
 
